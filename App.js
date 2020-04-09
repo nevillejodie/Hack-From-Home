@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import avatar from "./raccoon.jpg"
 import {
   StyleSheet,
   Text,
@@ -44,8 +45,9 @@ function App() {
   };
 
   return (
+    
     <View style={styles.container}>
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity style={styles.button}> 
         <Text
           style={styles.text}
           onPress={() => {
@@ -64,7 +66,6 @@ function App() {
       <TouchableOpacity style={styles.button}>
         <Text style={styles.text}>Clean</Text>
       </TouchableOpacity>
-      <Image style={styles.tinyLogo} source={require("./placeholder.png")} />
       <Text>Happiness:{health1}</Text>
       <Text>Health:{health2}</Text>
       <Text>Hunger:{health3}</Text>
@@ -73,14 +74,17 @@ function App() {
       <Button onPress={() => setHealth1(health1 + 1)} title="Yes" />
       <Button onPress={HappinessBtnAlert} title="No"></Button>
       <Text>
-        Have we spoken about how we feel, taken our medication, or visited the
-        doctor today?
+        Have we washed today?
       </Text>
       <Button onPress={() => setHealth2(health2 + 1)} title="Yes" />
       <Button onPress={HealthBtnAlert} title="No"></Button>
       <Text>Have we eaten today?</Text>
       <Button onPress={() => setHealth3(health3 + 1)} title="Yes" />
       <Button onPress={HungerBtnAlert} title="No"></Button>
+      <Text>Did we sleep last night?</Text>
+      <Button onPress={() => setHealth2(health2 + 1)} title="Yes" />
+      <Button onPress={HealthBtnAlert} title="No"></Button>
+      <img src={avatar}/>
       <TextInput onChangeText={FormatText} />
     </View>
   );
@@ -103,6 +107,10 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 30,
   },
+  avatar: {
+    maxHeight: 50,
+    maxWidth: 50,
+  }
 });
 
 export default App;
