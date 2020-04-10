@@ -47,7 +47,7 @@ function App() {
   return (
     
     <View style={styles.container}>
-      <TouchableOpacity style={styles.button}> 
+      <TouchableOpacity style={styles.button} onPress={() => setHealth3(health3 + 1)}> 
         <Text
           style={styles.text}
           onPress={() => {
@@ -57,13 +57,13 @@ function App() {
           Feed
         </Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity onPress={() => setHealth2(health2 + 1)} style={styles.button}>
         <Text style={styles.text}>Sleep</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity onPress={() => setHealth1(health1 + 1)} style={styles.button}>
         <Text style={styles.text}>Play</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity onPress={() => setHealth2(health2 + 1)} style={styles.button}>
         <Text style={styles.text}>Clean</Text>
       </TouchableOpacity>
       <Text>Happiness:{health1}</Text>

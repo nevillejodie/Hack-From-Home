@@ -8,3 +8,6 @@ functionality
 
 - create a question for 'did we sleep last night?' with yes and no functionality
 - change the doc/med question to 'have we washed today?' so it links in with the clean button better
+
+
+include push notification as the question itself: click yes or no. If they click yes, add a point, if they click no, make suggestions. 
