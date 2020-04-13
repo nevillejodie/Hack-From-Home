@@ -49,7 +49,7 @@ function App() {
   return (
     
     <View style={styles.container}>
-  {/*   <ProgressBar /> */}
+    <ProgressBar />
       <TouchableOpacity style={styles.button} onPress={() => setHealth3(health3 + 1)}> 
         <Text
           style={styles.text}

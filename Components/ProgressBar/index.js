@@ -22,13 +22,9 @@ function ProgressBar() {
         <>
         <div>
             <h2>Progress Bar</h2>
-            <ProgressBar percentage={percentage}/>
         </div>
-        <div>
-        <div className="progress-bar">
-          <Filler percentage={percentage} />
-        </div>
-        </div>
+        <div className={css.progressbar}></div>
+       <div className={css.filler} style={{ width: `${percentage}%` }} />
         <div style={{ marginTop: '20px' }}>  
             <button 
               onClick={nextStep}
@@ -37,15 +33,8 @@ function ProgressBar() {
             </button>  
           </div>  
           </>
-    )
-    }
+  )}
+    
 
 export default ProgressBar;
-
-
-
-
-
-  
-
 
