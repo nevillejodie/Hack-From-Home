@@ -18,10 +18,6 @@ function ProgressBar() {
        }
     }
 
-    function Filler({percentage}) {
-        return <div className="filler" style={{ width: `${percentage}%` }} />
-    }
-
     return (
         <>
         <div>
