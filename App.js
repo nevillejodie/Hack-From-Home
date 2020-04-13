@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ProgressBar from "./components/ProgressBar"
 import avatar from "./raccoon.jpg"
 import {
   StyleSheet,
@@ -15,6 +16,7 @@ function App() {
   const [health2, setHealth2] = useState(0);
   const [health3, setHealth3] = useState(0);
   const [value, onChangeText] = useState("");
+  
 
   function FormatText(value) {
     onChangeText(event.target.value);
@@ -42,11 +44,12 @@ function App() {
 
   const HungerBtnAlert = () => {
     alert("You need to... add hunger advice");
-  };
+  }
 
   return (
     
     <View style={styles.container}>
+  {/*   <ProgressBar percentage={nextStep}/> */}
       <TouchableOpacity style={styles.button} onPress={() => setHealth3(health3 + 1)}> 
         <Text
           style={styles.text}
