@@ -73,7 +73,7 @@ function App() {
       <Text>Health:{health2}</Text>
       <Text>Hunger:{health3}</Text>
       <br />
-      <Text>Have we done something we enjoy today?</Text>
+{/*       <Text>Have we done something we enjoy today?</Text>
       <Button onPress={() => setHealth1(health1 + 1)} title="Yes" />
       <Button onPress={HappinessBtnAlert} title="No"></Button>
       <Text>
@@ -88,7 +88,7 @@ function App() {
       <Button onPress={() => setHealth2(health2 + 1)} title="Yes" />
       <Button onPress={HealthBtnAlert} title="No"></Button>
       <img src={avatar}/>
-      <TextInput onChangeText={FormatText} />
+      <TextInput onChangeText={FormatText} /> */}
     </View>
   );
 }
