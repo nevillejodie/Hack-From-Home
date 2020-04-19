@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import ProgressBar from "./components/ProgressBar"
-import avatar from "./raccoon.jpg"
+import ProgressBar from "./components/ProgressBar";
+import avatar from "./raccoon.jpg";
 import {
   StyleSheet,
   Text,
@@ -16,7 +16,9 @@ function App() {
   const [health2, setHealth2] = useState(0);
   const [health3, setHealth3] = useState(0);
   const [value, onChangeText] = useState("");
-  
+  const [hungerPercentage, setHungerPercentage] = useState(0);
+  const [happyPercentage, setHappyPercentage] = useState(0);
+  const [healthPercentage, setHealthPercentage] = useState(0);
 
   function FormatText(value) {
     onChangeText(event.target.value);
@@ -44,13 +46,38 @@ function App() {
 
   const HungerBtnAlert = () => {
     alert("You need to... add hunger advice");
+  };
+
+  function addToHealth() {
+    if (healthPercentage < 100) {
+      setHealthPercentage(healthPercentage + 20);
+    } else {
+      return;
+    }
+  }
+  function addToHunger() {
+    if (hungerPercentage < 100) {
+      setHungerPercentage(hungerPercentage + 20);
+    } else {
+      return;
+    }
+  }
+  function addToHappiness() {
+    if (happyPercentage < 100) {
+      setHappyPercentage(happyPercentage + 20);
+    } else {
+      return;
+    }
   }
 
   return (
-    
     <View style={styles.container}>
-    <ProgressBar />
-      <TouchableOpacity style={styles.button} onPress={() => setHealth3(health3 + 1)}> 
+      <ProgressBar
+        hungerPercentage={hungerPercentage}
+        happyPercentage={happyPercentage}
+        healthPercentage={healthPercentage}
+      />
+      <TouchableOpacity style={styles.button} onPress={addToHunger}>
         <Text
           style={styles.text}
           onPress={() => {
@@ -60,20 +87,20 @@ function App() {
           Feed
         </Text>
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => setHealth2(health2 + 1)} style={styles.button}>
+      <TouchableOpacity onPress={addToHealth} style={styles.button}>
         <Text style={styles.text}>Sleep</Text>
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => setHealth1(health1 + 1)} style={styles.button}>
+      <TouchableOpacity onPress={addToHappiness} style={styles.button}>
         <Text style={styles.text}>Play</Text>
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => setHealth2(health2 + 1)} style={styles.button}>
+      <TouchableOpacity onPress={addToHealth} style={styles.button}>
         <Text style={styles.text}>Clean</Text>
       </TouchableOpacity>
-      <Text>Happiness:{health1}</Text>
+      {/* <Text>Happiness:{health1}</Text>
       <Text>Health:{health2}</Text>
       <Text>Hunger:{health3}</Text>
-      <br />
-{/*       <Text>Have we done something we enjoy today?</Text>
+      <br /> */}
+      {/*       <Text>Have we done something we enjoy today?</Text>
       <Button onPress={() => setHealth1(health1 + 1)} title="Yes" />
       <Button onPress={HappinessBtnAlert} title="No"></Button>
       <Text>
@@ -113,7 +140,7 @@ const styles = StyleSheet.create({
   avatar: {
     maxHeight: 50,
     maxWidth: 50,
-  }
+  },
 });
 
 export default App;

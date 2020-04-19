@@ -7,25 +7,14 @@ import { StyleSheet, Text, View, Button } from "react-native";
 // take out the manual reset by the user, how will this work instead? useTimeout?
 // send down to app and each one will take in the stuff from the 3 progress bars already made
 
-function ProgressBar() {
-  const [percentage, setPercentage] = useState(0);
-
-  function nextStep() {
-    if (percentage < 100) {
-      setPercentage(percentage + 20);
-      console.log(percentage);
-    } else {
-      return;
-    }
-  }
-
+function ProgressBar({ hungerPercentage, happyPercentage, healthPercentage }) {
   return (
     <View>
-      <Text>Progress Bar</Text>
+      <Text>Health</Text>
       <View style={styles.progressbar}>
         <View
           style={{
-            width: percentage * 3.5,
+            width: healthPercentage * 3.5,
             backgroundColor: "#1DA598",
             height: 20,
             borderRadius: "inherit",
@@ -33,8 +22,29 @@ function ProgressBar() {
           }}
         />
       </View>
-      <View style={{ marginTop: 20 }}>
-        <Button onPress={nextStep} title="Next Step"></Button>
+      <Text>Happiness</Text>
+      <View style={styles.progressbar}>
+        <View
+          style={{
+            width: happyPercentage * 3.5,
+            backgroundColor: "#1DA598",
+            height: 20,
+            borderRadius: "inherit",
+            marginTop: -1,
+          }}
+        />
+      </View>
+      <Text>Hunger</Text>
+      <View style={styles.progressbar}>
+        <View
+          style={{
+            width: hungerPercentage * 5.8,
+            backgroundColor: "#1DA598",
+            height: 20,
+            borderRadius: "inherit",
+            marginTop: -1,
+          }}
+        />
       </View>
     </View>
   );
