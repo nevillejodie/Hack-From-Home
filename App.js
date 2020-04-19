@@ -12,10 +12,10 @@ import {
 } from "react-native";
 
 function App() {
-  const [health1, setHealth1] = useState(0);
-  const [health2, setHealth2] = useState(0);
-  const [health3, setHealth3] = useState(0);
-  const [value, onChangeText] = useState("");
+  // const [health1, setHealth1] = useState(0);
+  // const [health2, setHealth2] = useState(0);
+  // const [health3, setHealth3] = useState(0);
+  // const [value, onChangeText] = useState("");
   const [hungerPercentage, setHungerPercentage] = useState(0);
   const [happyPercentage, setHappyPercentage] = useState(0);
   const [healthPercentage, setHealthPercentage] = useState(0);
@@ -52,13 +52,15 @@ function App() {
     if (healthPercentage < 100) {
       setHealthPercentage(healthPercentage + 20);
     } else {
+      alert("Im Healthy!");
       return;
     }
   }
   function addToHunger() {
-    if (hungerPercentage < 100) {
+    if (hungerPercentage < 60) {
       setHungerPercentage(hungerPercentage + 20);
     } else {
+      alert("Im Full!");
       return;
     }
   }
@@ -66,6 +68,7 @@ function App() {
     if (happyPercentage < 100) {
       setHappyPercentage(happyPercentage + 20);
     } else {
+      alert("Im Happy!");
       return;
     }
   }
@@ -78,14 +81,7 @@ function App() {
         healthPercentage={healthPercentage}
       />
       <TouchableOpacity style={styles.button} onPress={addToHunger}>
-        <Text
-          style={styles.text}
-          onPress={() => {
-            alert("You fed me!");
-          }}
-        >
-          Feed
-        </Text>
+        <Text style={styles.text}>Feed</Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={addToHealth} style={styles.button}>
         <Text style={styles.text}>Sleep</Text>
