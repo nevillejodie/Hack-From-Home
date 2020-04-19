@@ -74,24 +74,28 @@ function App() {
   }
 
   return (
-    <View style={styles.container}>
-      <ProgressBar
-        hungerPercentage={hungerPercentage}
-        happyPercentage={happyPercentage}
-        healthPercentage={healthPercentage}
-      />
-      <TouchableOpacity style={styles.button} onPress={addToHunger}>
-        <Text style={styles.text}>Feed</Text>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={addToHealth} style={styles.button}>
-        <Text style={styles.text}>Sleep</Text>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={addToHappiness} style={styles.button}>
-        <Text style={styles.text}>Play</Text>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={addToHealth} style={styles.button}>
-        <Text style={styles.text}>Clean</Text>
-      </TouchableOpacity>
+    <View>
+      <View style={styles.container}>
+        <ProgressBar
+          hungerPercentage={hungerPercentage}
+          happyPercentage={happyPercentage}
+          healthPercentage={healthPercentage}
+        />
+      </View>
+      <View style={styles.buttons}>
+        <TouchableOpacity onPress={addToHealth} style={styles.button}>
+          <Text style={styles.text}>Sleep</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={addToHealth} style={styles.button}>
+          <Text style={styles.text}>Clean</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={addToHappiness} style={styles.button}>
+          <Text style={styles.text}>Play</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button} onPress={addToHunger}>
+          <Text style={styles.text}>Feed</Text>
+        </TouchableOpacity>
+      </View>
       {/* <Text>Happiness:{health1}</Text>
       <Text>Health:{health2}</Text>
       <Text>Hunger:{health3}</Text>
@@ -124,11 +128,19 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     textAlign: "center",
   },
+  buttons: {
+    flex: 1,
+    alignItems: "flex-start",
+    marginTop: -160,
+    marginLeft: 10,
+  },
   button: {
     backgroundColor: "#afeeee",
     borderRadius: 5,
     padding: 5,
     marginBottom: 5,
+    width: 90,
+    textAlign: "center",
   },
   text: {
     fontSize: 30,
