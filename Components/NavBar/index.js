@@ -9,7 +9,7 @@ function NavBar() {
   return (
       
     <div className="navBar">
-    
+    <p>LOGOHEREBAB</p>
       <img
         src={burgerMenu}
         className="burgerMenu"

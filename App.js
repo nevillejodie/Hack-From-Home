@@ -76,6 +76,7 @@ function App() {
   return (
     <View>
     <NavBar/>
+    <br></br>
       <View style={styles.container}>
         <ProgressBar
           hungerPercentage={hungerPercentage}
