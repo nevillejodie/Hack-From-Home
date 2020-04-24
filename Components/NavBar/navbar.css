@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 .burgerMenu {
   width: 60px;
   float: right;
   margin: 10px;
-  margin-top: -45px;
+  margin-top: 19px;
 }
 .navBar {
   background-color: #afeeee;
@@ -12,4 +14,11 @@
 .header {
   text-align: center;
   margin-top: -30px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 40px;
+}
+
+.logo {
+  margin-left: 1%;
+  margin-top: 1%
 }

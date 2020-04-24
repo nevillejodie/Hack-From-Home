@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import ProgressBar from "./components/ProgressBar";
+import tempavatar from "./assets/tempavatar.png"
+import "./app.css"
 import NavBar from "./components/NavBar";
 import {
   StyleSheet,
@@ -118,6 +120,7 @@ function App() {
       <Button onPress={HealthBtnAlert} title="No"></Button>
       <img src={avatar}/>
       <TextInput onChangeText={FormatText} /> */}
+      <img className="tempavatar" height="100px" width="100px" src={tempavatar}></img>
     </View>
   );
 }
@@ -146,6 +149,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 30,
+    fontfamily: 'Roboto', 
   },
   avatar: {
     maxHeight: 50,
