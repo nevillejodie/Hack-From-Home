@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ProgressBar from "./components/ProgressBar";
-import avatar from "./raccoon.jpg";
+import NavBar from "./components/NavBar";
 import {
   StyleSheet,
   Text,
@@ -75,6 +75,7 @@ function App() {
 
   return (
     <View>
+    <NavBar/>
       <View style={styles.container}>
         <ProgressBar
           hungerPercentage={hungerPercentage}
