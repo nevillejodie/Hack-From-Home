@@ -1,15 +1,15 @@
+.burgerMenu {
+  width: 60px;
+  float: right;
+  margin: 10px;
+  margin-top: -45px;
+}
+.navBar {
+  background-color: #afeeee;
+  width: 100vw;
+}
 
-  
-  .burgerMenu {
-    width: 60px;
-    float: right;
-    margin: 10px;
-  }
-  .navBar {
-    background-color:#afeeee;
-    width: 100vw;
-  }
-  
-  .header {
-      text-align: center;
-  }
+.header {
+  text-align: center;
+  margin-top: -30px;
+}
