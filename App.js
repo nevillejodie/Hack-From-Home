@@ -44,7 +44,9 @@ function App() {
   function addToHunger() {
     if (hungerPercentage < 60) {
       setHungerPercentage(hungerPercentage + 20);
-      setHealthPercentage(healthPercentage + 20);
+      if (healthPercentage < 100) {
+        setHealthPercentage(healthPercentage + 20);
+      }
     } else {
       setIsBubbleOpen(true);
       setBubbleText("Im Full!");
