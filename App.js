@@ -81,11 +81,11 @@ function App() {
         <TouchableOpacity onPress={addToHealth} style={styles.button}>
           <Text style={styles.text}>Clean</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={addToHappiness} style={styles.button}>
-          <Text style={styles.text}>Play</Text>
-        </TouchableOpacity>
         <TouchableOpacity style={styles.button} onPress={addToHunger}>
           <Text style={styles.text}>Feed</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={addToHappiness} style={styles.button}>
+          <Text style={styles.text}>Play</Text>
         </TouchableOpacity>
       </View>
 
