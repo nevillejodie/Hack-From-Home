@@ -120,7 +120,7 @@ function App() {
       <Button onPress={HealthBtnAlert} title="No"></Button>
       <img src={avatar}/>
       <TextInput onChangeText={FormatText} /> */}
-      <img className="tempavatar" height="100px" width="100px" src={tempavatar}></img>
+      <img className="tempavatar"  src={tempavatar}></img>
     </View>
   );
 }
