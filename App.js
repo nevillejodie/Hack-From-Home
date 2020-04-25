@@ -44,6 +44,7 @@ function App() {
   function addToHunger() {
     if (hungerPercentage < 60) {
       setHungerPercentage(hungerPercentage + 20);
+      setHealthPercentage(healthPercentage + 20);
     } else {
       setIsBubbleOpen(true);
       setBubbleText("Im Full!");
@@ -95,8 +96,7 @@ function App() {
                 setIsBubbleOpen(false);
               }}
             >
-              {" "}
-              x{" "}
+              x
             </Text>
             <Text className="p"> {bubbleText} </Text>
           </View>
