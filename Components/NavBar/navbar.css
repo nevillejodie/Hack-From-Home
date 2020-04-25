@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 .burgerMenu {
   width: 60px;
@@ -13,12 +13,13 @@
 
 .header {
   text-align: center;
-  margin-top: -30px;
-  font-family: 'Roboto', sans-serif;
+  margin-top: -70px;
+  margin-left: 50px;
+  font-family: "Roboto", sans-serif;
   font-size: 40px;
 }
 
 .logo {
   margin-left: 1%;
-  margin-top: 1%
+  margin-top: 1%;
 }

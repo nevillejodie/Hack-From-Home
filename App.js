@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ProgressBar from "./components/ProgressBar";
-import tempavatar from "./assets/tempavatar.png"
-import "./app.css"
+import tempavatar from "./assets/tempavatar.png";
+import "./app.css";
 import NavBar from "./components/NavBar";
 import {
   StyleSheet,
@@ -77,8 +77,8 @@ function App() {
 
   return (
     <View>
-    <NavBar/>
-    <br></br>
+      <NavBar />
+      <br></br>
       <View style={styles.container}>
         <ProgressBar
           hungerPercentage={hungerPercentage}
@@ -120,7 +120,9 @@ function App() {
       <Button onPress={HealthBtnAlert} title="No"></Button>
       <img src={avatar}/>
       <TextInput onChangeText={FormatText} /> */}
-      <img className="tempavatar" height="100px" width="100px" src={tempavatar}></img>
+      <View classname="avatarContainer" style={styles.avatarContainer}>
+        <img className="avatar" height="100px" width="100px" src={tempavatar} />
+      </View>
     </View>
   );
 }
@@ -149,11 +151,16 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 30,
-    fontfamily: 'Roboto', 
+    fontfamily: "Roboto",
   },
   avatar: {
     maxHeight: 50,
     maxWidth: 50,
+  },
+  avatarContainer: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
   },
 });
 
