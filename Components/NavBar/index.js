@@ -1,21 +1,22 @@
 import React, { useState } from "react";
-import "./NavBar.css";
+import "./navbar.css";
 import { Link } from "react-router-dom";
 import burgerMenu from "./burgermenu.svg";
-import newlogo from "../../assets/newlogo.png"
+import newlogo from "../../assets/newlogo.png";
+import { Image, StyleSheet, Text } from "react-native";
 
 function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <div className="navBar">
-      <img className="logo" src={newlogo} height="130px" width="130px"></img>
-      <img
-        src={burgerMenu}
+      <Image className="logo" source={newlogo} />
+      <Image
+        source={burgerMenu}
         className="burgerMenu"
         alt="menu"
         onClick={() => setIsMenuOpen(!isMenuOpen)}
       />
-      <h3 className="header">AniMate</h3>
+      <Text className="title">AniMate</Text>
       {isMenuOpen && (
         <Menu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
       )}

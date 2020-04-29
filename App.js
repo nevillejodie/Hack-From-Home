@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import ProgressBar from "./components/ProgressBar";
 import tempavatar from "./assets/tempavatar.png";
-import happy from "./assets/happy.png"
-import healthy from "./assets/healthy.png"
-import hungry from "./assets/hungry.png"
+import happy from "./assets/happy.png";
+import healthy from "./assets/healthy.png";
+import hungry from "./assets/hungry.png";
 import "./app.css";
 import NavBar from "./components/NavBar";
 import {
@@ -72,15 +72,17 @@ function App() {
       <br></br>
       <View style={styles.container}>
         <ProgressBar
-          hungerPercentage={hungerPercentage} 
+          hungerPercentage={hungerPercentage}
           happyPercentage={happyPercentage}
           healthPercentage={healthPercentage}
         />
-        <img height="250px" width="250px" src={hungry}/>
-        <img height="250px" width="350px" src={happy}></img>
-        <img height="250px" width="250px" src={healthy}></img>
       </View>
-      <View style={styles.buttons}>
+      <View style={styles.imgContainer}>
+        <Image style={styles.image} source={healthy} onClick={addToHealth} />
+        <Image style={styles.image} source={hungry} onClick={addToHunger} />
+        <Image style={styles.image} source={happy} onClick={addToHappiness} />
+      </View>
+      {/* <View style={styles.buttons}>
         <TouchableOpacity onPress={addToHealth} style={styles.button}>
           <Text style={styles.text}>Sleep</Text>
         </TouchableOpacity>
@@ -93,7 +95,7 @@ function App() {
         <TouchableOpacity onPress={addToHappiness} style={styles.button}>
           <Text style={styles.text}>Play</Text>
         </TouchableOpacity>
-      </View>
+      </View> */}
       <View className="avatarContainer" style={styles.avatarContainer}>
         {isBubbleOpen && (
           <View className="speech-bubble">
@@ -152,6 +154,16 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+  },
+  imgContainer: {
+    flex: 1,
+    flexDirection: "column",
+    justifyContent: "flex-start",
+    marginTop: -120,
+  },
+  image: {
+    width: 50,
+    height: 50,
   },
 });
 
