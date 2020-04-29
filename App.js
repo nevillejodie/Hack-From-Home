@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import ProgressBar from "./components/ProgressBar";
 import tempavatar from "./assets/tempavatar.png";
+import happy from "./assets/happy.png"
+import healthy from "./assets/healthy.png"
+import hungry from "./assets/hungry.png"
 import "./app.css";
 import NavBar from "./components/NavBar";
 import {
@@ -69,10 +72,13 @@ function App() {
       <br></br>
       <View style={styles.container}>
         <ProgressBar
-          hungerPercentage={hungerPercentage}
+          hungerPercentage={hungerPercentage} 
           happyPercentage={happyPercentage}
           healthPercentage={healthPercentage}
         />
+        <img height="250px" width="250px" src={hungry}/>
+        <img height="250px" width="350px" src={happy}></img>
+        <img height="250px" width="250px" src={healthy}></img>
       </View>
       <View style={styles.buttons}>
         <TouchableOpacity onPress={addToHealth} style={styles.button}>
@@ -88,7 +94,6 @@ function App() {
           <Text style={styles.text}>Play</Text>
         </TouchableOpacity>
       </View>
-
       <View className="avatarContainer" style={styles.avatarContainer}>
         {isBubbleOpen && (
           <View className="speech-bubble">
