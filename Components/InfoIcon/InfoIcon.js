@@ -1,22 +1,20 @@
 import React, { useState } from "react";
-import { Button } from "react-bootstrap";
-import { Modal } from "react-bootstrap";
-import i from "../../../Hack-From-Home/SVGs/infoIcon.svg";
+import { Button, Modal } from "react-bootstrap";
+import { Image } from "react-native";
+import i from "./infoIcon.svg";
 import css from "./InfoIcon.module.css";
 
 function InfoIcon() {
   const [show, setShow] = useState(false);
-  const img = <img src={i} alt="more info" className={css.infoBtn}></img>;
 
   return (
     <>
-      <Button onClick={() => setShow(true)}>{img}</Button>
-      <img
-        src={i}
-        alt="more info"
-        className={css.infoBtn}
+      <Image
+        source={i}
+        style={{ width: 50, height: 50, marginTop: -50, marginLeft: 130 }}
         onClick={() => setShow(true)}
       />
+
       <Modal
         size="lg"
         show={show}

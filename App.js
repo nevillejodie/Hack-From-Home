@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import ProgressBar from "./components/ProgressBar";
 import tempavatar from "./assets/tempavatar.png";
-
 import happy from "./assets/happy.png";
 import healthy from "./assets/healthy.png";
 import hungry from "./assets/hungry.png";
@@ -82,10 +81,6 @@ function App() {
         />
       </View>
 
-      <View>
-        <InfoIcon />
-      </View>
-
       <View style={styles.imgContainer}>
         <Image style={styles.image} source={healthy} onClick={addToHealth} />
         <Image style={styles.image} source={hungry} onClick={addToHunger} />
@@ -126,8 +121,10 @@ function App() {
           source={tempavatar}
           onClick={addToHappiness}
         />
+        <View>
+          <InfoIcon />
+        </View>
       </View>
-
     </View>
   );
 }
@@ -159,7 +156,6 @@ const styles = StyleSheet.create({
     fontSize: 30,
 
     fontfamily: "Roboto",
-
   },
   avatar: {
     maxHeight: 50,
