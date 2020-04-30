@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ProgressBar from "./components/ProgressBar";
 import tempavatar from "./assets/tempavatar.png";
+
 import happy from "./assets/happy.png";
 import healthy from "./assets/healthy.png";
 import hungry from "./assets/hungry.png";
@@ -15,6 +16,8 @@ import {
   Image,
   TouchableOpacity,
 } from "react-native";
+import InfoIcon from "./Components/InfoIcon/InfoIcon";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   const [hungerPercentage, setHungerPercentage] = useState(0);
@@ -70,6 +73,7 @@ function App() {
     <View>
       <NavBar />
       <br></br>
+
       <View style={styles.container}>
         <ProgressBar
           hungerPercentage={hungerPercentage}
@@ -77,12 +81,19 @@ function App() {
           healthPercentage={healthPercentage}
         />
       </View>
+
+      <View>
+        <InfoIcon />
+      </View>
+
       <View style={styles.imgContainer}>
         <Image style={styles.image} source={healthy} onClick={addToHealth} />
         <Image style={styles.image} source={hungry} onClick={addToHunger} />
         <Image style={styles.image} source={happy} onClick={addToHappiness} />
       </View>
       {/* <View style={styles.buttons}>
+
+
         <TouchableOpacity onPress={addToHealth} style={styles.button}>
           <Text style={styles.text}>Sleep</Text>
         </TouchableOpacity>
@@ -116,6 +127,7 @@ function App() {
           onClick={addToHappiness}
         />
       </View>
+
     </View>
   );
 }
@@ -145,6 +157,9 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 30,
+
+    fontfamily: "Roboto",
+
   },
   avatar: {
     maxHeight: 50,
