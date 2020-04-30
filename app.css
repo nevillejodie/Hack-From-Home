@@ -1,5 +1,37 @@
-.tempavatar {
-    height: 100px;
-    width: 100px;
-    margin-left: 800px;
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+html,
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.avatar {
+  height: 100px;
+  width: 100px;
+}
+
+.speech-bubble {
+  background: #afeeee;
+  border-radius: 20px;
+  font-size: 1.2rem;
+  line-height: 1.3;
+  margin: 0 auto 40px;
+  max-width: 400px;
+  min-width: 100px;
+  padding: 15px;
+  position: relative;
+}
+
+.speech-bubble::after {
+  border-left: 20px solid transparent;
+  border-top: 20px solid #afeeee;
+  bottom: -20px;
+  content: "";
+  position: absolute;
+  right: 55px;
+}
+
+.close {
+  margin-left: 80%;
+  margin-top: -5px;
+  font-weight: bold;
 }

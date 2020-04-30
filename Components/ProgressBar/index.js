@@ -22,11 +22,11 @@ function ProgressBar({ hungerPercentage, happyPercentage, healthPercentage }) {
           }}
         />
       </View>
-      <Text>Happiness</Text>
+      <Text>Hunger</Text>
       <View style={styles.progressbar}>
         <View
           style={{
-            width: happyPercentage * 3.5,
+            width: hungerPercentage * 5.8,
             backgroundColor: "#1DA598",
             height: 20,
             borderRadius: "inherit",
@@ -34,11 +34,11 @@ function ProgressBar({ hungerPercentage, happyPercentage, healthPercentage }) {
           }}
         />
       </View>
-      <Text>Hunger</Text>
+      <Text>Happiness</Text>
       <View style={styles.progressbar}>
         <View
           style={{
-            width: hungerPercentage * 5.8,
+            width: happyPercentage * 3.5,
             backgroundColor: "#1DA598",
             height: 20,
             borderRadius: "inherit",

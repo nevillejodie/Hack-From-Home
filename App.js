@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import ProgressBar from "./components/ProgressBar";
 import tempavatar from "./assets/tempavatar.png";
+
+import happy from "./assets/happy.png";
+import healthy from "./assets/healthy.png";
+import hungry from "./assets/hungry.png";
 import "./app.css";
 import NavBar from "./components/NavBar";
 import {
@@ -16,17 +20,11 @@ import InfoIcon from "./Components/InfoIcon/InfoIcon";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
-  // const [health1, setHealth1] = useState(0);
-  // const [health2, setHealth2] = useState(0);
-  // const [health3, setHealth3] = useState(0);
-  // const [value, onChangeText] = useState("");
   const [hungerPercentage, setHungerPercentage] = useState(0);
   const [happyPercentage, setHappyPercentage] = useState(0);
   const [healthPercentage, setHealthPercentage] = useState(0);
-
-  function FormatText(value) {
-    onChangeText(event.target.value);
-  }
+  const [isBubbleOpen, setIsBubbleOpen] = useState(false);
+  const [bubbleText, setBubbleText] = useState("");
 
   function healthBar1() {
     setHealth1(health1);
@@ -40,31 +38,24 @@ function App() {
     setHealth3(health3);
   }
 
-  const HappinessBtnAlert = () => {
-    alert("You need to... add happiness advice");
-  };
-
-  const HealthBtnAlert = () => {
-    alert("You need to... add health advice");
-  };
-
-  const HungerBtnAlert = () => {
-    alert("You need to... add hunger advice");
-  };
-
   function addToHealth() {
     if (healthPercentage < 100) {
       setHealthPercentage(healthPercentage + 20);
     } else {
-      alert("Im Healthy!");
+      setIsBubbleOpen(true);
+      setBubbleText("Im Healthy!");
       return;
     }
   }
   function addToHunger() {
     if (hungerPercentage < 60) {
       setHungerPercentage(hungerPercentage + 20);
+      if (healthPercentage < 100) {
+        setHealthPercentage(healthPercentage + 20);
+      }
     } else {
-      alert("Im Full!");
+      setIsBubbleOpen(true);
+      setBubbleText("Im Full!");
       return;
     }
   }
@@ -72,7 +63,8 @@ function App() {
     if (happyPercentage < 100) {
       setHappyPercentage(happyPercentage + 20);
     } else {
-      alert("Im Happy!");
+      setIsBubbleOpen(true);
+      setBubbleText("Im Happy!");
       return;
     }
   }
@@ -89,49 +81,53 @@ function App() {
           healthPercentage={healthPercentage}
         />
       </View>
+
       <View>
         <InfoIcon />
       </View>
-      <View style={styles.buttons}>
+
+      <View style={styles.imgContainer}>
+        <Image style={styles.image} source={healthy} onClick={addToHealth} />
+        <Image style={styles.image} source={hungry} onClick={addToHunger} />
+        <Image style={styles.image} source={happy} onClick={addToHappiness} />
+      </View>
+      {/* <View style={styles.buttons}>
+
+
         <TouchableOpacity onPress={addToHealth} style={styles.button}>
           <Text style={styles.text}>Sleep</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={addToHealth} style={styles.button}>
           <Text style={styles.text}>Clean</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={addToHappiness} style={styles.button}>
-          <Text style={styles.text}>Play</Text>
-        </TouchableOpacity>
         <TouchableOpacity style={styles.button} onPress={addToHunger}>
           <Text style={styles.text}>Feed</Text>
         </TouchableOpacity>
+        <TouchableOpacity onPress={addToHappiness} style={styles.button}>
+          <Text style={styles.text}>Play</Text>
+        </TouchableOpacity>
+      </View> */}
+      <View className="avatarContainer" style={styles.avatarContainer}>
+        {isBubbleOpen && (
+          <View className="speech-bubble">
+            <Text
+              className="close"
+              onClick={() => {
+                setIsBubbleOpen(false);
+              }}
+            >
+              x
+            </Text>
+            <Text className="p"> {bubbleText} </Text>
+          </View>
+        )}
+        <Image
+          className="avatar"
+          source={tempavatar}
+          onClick={addToHappiness}
+        />
       </View>
-      {/* <Text>Happiness:{health1}</Text>
-      <Text>Health:{health2}</Text>
-      <Text>Hunger:{health3}</Text>
-      <br /> */}
-      {/*       <Text>Have we done something we enjoy today?</Text>
-      <Button onPress={() => setHealth1(health1 + 1)} title="Yes" />
-      <Button onPress={HappinessBtnAlert} title="No"></Button>
-      <Text>
-        Have we washed today?
-      </Text>
-      <Button onPress={() => setHealth2(health2 + 1)} title="Yes" />
-      <Button onPress={HealthBtnAlert} title="No"></Button>
-      <Text>Have we eaten today?</Text>
-      <Button onPress={() => setHealth3(health3 + 1)} title="Yes" />
-      <Button onPress={HungerBtnAlert} title="No"></Button>
-      <Text>Did we sleep last night?</Text>
-      <Button onPress={() => setHealth2(health2 + 1)} title="Yes" />
-      <Button onPress={HealthBtnAlert} title="No"></Button>
-      <img src={avatar}/>
-      <TextInput onChangeText={FormatText} /> */}
-      <img
-        className="tempavatar"
-        height="100px"
-        width="100px"
-        src={tempavatar}
-      ></img>
+
     </View>
   );
 }
@@ -149,6 +145,7 @@ const styles = StyleSheet.create({
     alignItems: "flex-start",
     marginTop: -160,
     marginLeft: 10,
+    zIndex: 10,
   },
   button: {
     backgroundColor: "#afeeee",
@@ -160,11 +157,28 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 30,
+
     fontfamily: "Roboto",
+
   },
   avatar: {
     maxHeight: 50,
     maxWidth: 50,
+  },
+  avatarContainer: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  imgContainer: {
+    flex: 1,
+    flexDirection: "column",
+    justifyContent: "flex-start",
+    marginTop: -120,
+  },
+  image: {
+    width: 50,
+    height: 50,
   },
 });
 
