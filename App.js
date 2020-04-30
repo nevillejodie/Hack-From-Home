@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ProgressBar from "./components/ProgressBar";
-import tempavatar from "./assets/tempavatar.png"
-import "./app.css"
+import tempavatar from "./assets/tempavatar.png";
+import "./app.css";
 import NavBar from "./components/NavBar";
 import {
   StyleSheet,
@@ -12,6 +12,8 @@ import {
   Image,
   TouchableOpacity,
 } from "react-native";
+import InfoIcon from "./Components/InfoIcon/InfoIcon";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   // const [health1, setHealth1] = useState(0);
@@ -77,14 +79,18 @@ function App() {
 
   return (
     <View>
-    <NavBar/>
-    <br></br>
+      <NavBar />
+      <br></br>
+
       <View style={styles.container}>
         <ProgressBar
           hungerPercentage={hungerPercentage}
           happyPercentage={happyPercentage}
           healthPercentage={healthPercentage}
         />
+      </View>
+      <View>
+        <InfoIcon />
       </View>
       <View style={styles.buttons}>
         <TouchableOpacity onPress={addToHealth} style={styles.button}>
@@ -120,7 +126,12 @@ function App() {
       <Button onPress={HealthBtnAlert} title="No"></Button>
       <img src={avatar}/>
       <TextInput onChangeText={FormatText} /> */}
-      <img className="tempavatar" height="100px" width="100px" src={tempavatar}></img>
+      <img
+        className="tempavatar"
+        height="100px"
+        width="100px"
+        src={tempavatar}
+      ></img>
     </View>
   );
 }
@@ -149,7 +160,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 30,
-    fontfamily: 'Roboto', 
+    fontfamily: "Roboto",
   },
   avatar: {
     maxHeight: 50,
