@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import ProgressBar from "./components/ProgressBar";
-import tempavatar from "./assets/tempavatar.png";
+import ProgressBar from "./Components/ProgressBar";
+import avatar from "./assets/ani-default.svg";
 import happy from "./assets/happy.png";
 import healthy from "./assets/healthy.png";
 import hungry from "./assets/hungry.png";
@@ -116,11 +116,7 @@ function App() {
             <Text className="p"> {bubbleText} </Text>
           </View>
         )}
-        <Image
-          className="avatar"
-          source={tempavatar}
-          onClick={addToHappiness}
-        />
+        <Image className="avatar" source={avatar} onClick={addToHappiness} />
       </View>
     </View>
   );

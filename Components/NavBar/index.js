@@ -19,12 +19,8 @@ function NavBar() {
         className="burgerMenu"
         alt="menu"
         style={{ marginTop: -90 }}
-        onClick={() => setIsMenuOpen(!isMenuOpen)}
       />
       <Text className="title">AniMate</Text>
-      {isMenuOpen && (
-        <Menu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
-      )}
     </div>
   );
 }
