@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
 import { Image } from "react-native";
-import i from "./infoIcon.svg";
-import css from "./InfoIcon.module.css";
+import i from "./icon.svg";
 
 function InfoIcon() {
   const [show, setShow] = useState(false);
@@ -11,7 +10,7 @@ function InfoIcon() {
     <>
       <Image
         source={i}
-        style={{ width: 50, height: 50, marginTop: -50, marginLeft: 130 }}
+        style={{ width: 30, height: 30, marginTop: -70, marginLeft: 200 }}
         onClick={() => setShow(true)}
       />
 

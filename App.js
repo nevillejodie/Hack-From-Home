@@ -15,7 +15,7 @@ import {
   Image,
   TouchableOpacity,
 } from "react-native";
-import InfoIcon from "./Components/InfoIcon/InfoIcon";
+import InfoIcon from "./Components/Info";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
@@ -121,9 +121,6 @@ function App() {
           source={tempavatar}
           onClick={addToHappiness}
         />
-        <View>
-          <InfoIcon />
-        </View>
       </View>
     </View>
   );

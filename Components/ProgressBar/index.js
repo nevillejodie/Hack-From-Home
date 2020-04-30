@@ -15,7 +15,7 @@ function ProgressBar({ hungerPercentage, happyPercentage, healthPercentage }) {
         <View
           style={{
             width: healthPercentage * 3.5,
-            backgroundColor: "#1DA598",
+            backgroundColor: "#97e5d3",
             height: 20,
             borderRadius: "inherit",
             marginTop: -1,
@@ -27,7 +27,7 @@ function ProgressBar({ hungerPercentage, happyPercentage, healthPercentage }) {
         <View
           style={{
             width: hungerPercentage * 5.8,
-            backgroundColor: "#1DA598",
+            backgroundColor: "#c89dff",
             height: 20,
             borderRadius: "inherit",
             marginTop: -1,
@@ -39,7 +39,7 @@ function ProgressBar({ hungerPercentage, happyPercentage, healthPercentage }) {
         <View
           style={{
             width: happyPercentage * 3.5,
-            backgroundColor: "#1DA598",
+            backgroundColor: "#fee45c",
             height: 20,
             borderRadius: "inherit",
             marginTop: -1,

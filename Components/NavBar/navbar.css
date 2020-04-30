@@ -4,6 +4,7 @@
   float: right;
   margin: 10px;
   margin-top: 19px;
+  display: inline-block;
 }
 .navBar {
   background-color: #f8f8ff;
