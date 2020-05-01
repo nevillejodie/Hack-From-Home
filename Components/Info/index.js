@@ -25,12 +25,18 @@ function InfoIcon() {
         </Modal.Header>
         <Modal.Body>
           <p>
-            Ani is your own virtual pet and companion designed to take care of
-            you. With your Ani you can do daily activities together including
-            eating meals, wash and exercise so you will never feel lonely again.
-            As a caring empathic companion, Ani will also ask you about your
-            overall feeling and happiness each day. You eat, so does Ani. You
-            happy, so is Ani!
+            Ani is your very own virtual pet and companion designed to take care
+            of you. With Ani, you can do daily activities including eating
+            meals, taking a wash, sleeping and doing exercise - and with Ani's
+            company, you will never feel lonely again. As a caring empathic
+            companion, Ani will also ask you about your overall feelings and
+            happiness each day.
+            <div>
+              <strong>
+                If you eat, so does Ani. If you sleep, so does Ani. And if you
+                are happy, so is Ani!
+              </strong>
+            </div>
           </p>
         </Modal.Body>
       </Modal>
